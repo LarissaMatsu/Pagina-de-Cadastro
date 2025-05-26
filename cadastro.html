@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cadastro de Usuário</title>
+<style>
+  /* Reset some elements */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    background: white;
+    border-radius: 12px;
+    max-width: 420px;
+    width: 100%;
+    padding: 2rem 3rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  }
+  h1 {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #2575fc;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #444;
+  }
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"] {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="password"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus {
+    border-color: #2575fc;
+    outline: none;
+  }
+  button {
+    background: #2575fc;
+    color: white;
+    font-weight: 700;
+    padding: 0.85rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  button:hover {
+    background: #1b54c8;
+  }
+  .message {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 600;
+  }
+  .error {
+    color: #e63946;
+  }
+  .success {
+    color: #2a9d8f;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Cadastro de Usuário</h1>
+    <form id="registrationForm" novalidate>
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" placeholder="Seu nome completo" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder="Senha segura" required minlength="6" />
+
+      <label for="endereco">Endereço</label>
+      <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro, cidade" required />
+
+      <label for="dataNascimento">Data de Nascimento</label>
+      <input type="date" id="dataNascimento" name="dataNascimento" required />
+
+      <label for="cpf">CPF</label>
+      <input type="number" id="cpf" name="cpf" placeholder="XXXXXXXXXXX" required pattern="\d{11}" />
+
+      <label for="telefone">Telefone</label>
+      <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxx-xxxx ou (xx) xxxxx-xxxx" required pattern="^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$" />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+    <div id="formMessage" class="message" aria-live="polite"></div>
+  </div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const formMessage = document.getElementById('formMessage');
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    formMessage.textContent = '';
+    formMessage.className = 'message';
+
+    const nome = form.nome.value.trim();
+    const email = form.email.value.trim();
+    const senha = form.senha.value;
+    const endereco = form.endereco.value.trim();
+    const dataNascimento = form.dataNascimento.value;
+    const cpf = form.cpf.value.trim();
+    const telefone = form.telefone.value.trim();
+
+    // Validation
+    const errors = [];
+
+    if (nome.length < 2) {
+      errors.push('O nome deve conter ao menos 2 caracteres.');
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      errors.push('Email inválido.');
+    }
+
+    if (senha.length < 6) {
+      errors.push('A senha deve ter ao menos 6 caracteres.');
+    }
+
+    if (endereco.length < 5) {
+      errors.push('Endereço muito curto.');
+    }
+
+    if (!dataNascimento) {
+      errors.push('Data de Nascimento é obrigatória.');
+    }
+
+    const cpfPattern = /^\d{11}$/;
+    if (!cpfPattern.test(cpf)) {
+      errors.push('CPF inválido. Utilize apenas números.');
+    }
+
+    const telefonePattern = /^\(?\d{2}\)?\s?\d{4,5}-?\d{4}$/;
+    if (!telefonePattern.test(telefone)) {
+      errors.push('Telefone inválido. Use formato (xx) xxxx-xxxx ou (xx) xxxxx-xxxx.');
+    }
+
+    if (errors.length > 0) {
+      formMessage.textContent = errors.join(' ');
+      formMessage.classList.add('error');
+      return;
+    }
+
+    // If valid - simulate submission success
+    formMessage.textContent = 'Cadastro realizado com sucesso! Obrigado.';
+    formMessage.classList.add('success');
+    form.reset();
+  });
+</script>
+</body>
+</html>
