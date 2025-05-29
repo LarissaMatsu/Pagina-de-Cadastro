@@ -1,12 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style_servico.css') }}">
-    <title>Nossos Serviços</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serviços</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      margin: 0; padding: 2rem;
+      min-height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    h1 {
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .content {
+      max-width: 700px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      width: 100%;
+      box-sizing: border-box;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      font-size: 1.3rem;
+      line-height: 1.7;
+    }
+    li {
+      background: rgba(255,255,255,0.2);
+      margin: 0.7rem 0;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: background 0.3s ease;
+      cursor: default;
+      user-select: none;
+    }
+    li:hover {
+      background: rgba(255,255,255,0.35);
+    }
+    .logout-button {
+      margin-top: 2rem;
+      background: #fff;
+      color: #764ba2;
+      font-weight: 700;
+      padding: 0.9rem 2.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      box-shadow: 0 6px 20px rgba(255,255,255,0.6);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      user-select: none;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .logout-button:hover, .logout-button:focus {
+      background: #5a3e9e;
+      color: #fff;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      transform: translateY(-3px);
+      outline: none;
+    }
+  </style>
 </head>
 <body>
-    <h1>Explore nossos serviços</h1>
+  <h1>Serviços Disponíveis</h1>
+  <div class="content">
+    <ul>
+      <li>Serviço 1: Consultoria personalizada</li>
+      <li>Serviço 2: Desenvolvimento web</li>
+      <li>Serviço 3: Suporte técnico 24/7</li>
+      <li>Serviço 4: Treinamento e capacitação</li>
+      <li>Serviço 5: Integração de sistemas</li>
+    </ul>
+    <a class="logout-button" href="/">Sair</a>
+  </div>
 </body>
 </html>
