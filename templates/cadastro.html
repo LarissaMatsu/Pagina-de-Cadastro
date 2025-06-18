@@ -4,104 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Cadastro</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      margin: 0; padding: 0;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      height: 100vh;
-      text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      font-weight: 700;
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    form {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem 3rem;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-      width: 320px;
-      box-sizing: border-box;
-    }
-    label {
-      display: block;
-      text-align: left;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.03em;
-      color: #ddd;
-    }
-    input[type="text"], input[type="password"] {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      margin-bottom: 1.25rem;
-      border-radius: 8px;
-      border: none;
-      font-size: 1rem;
-      box-sizing: border-box;
-      outline-offset: 2px;
-      transition: outline-offset 0.2s ease;
-    }
-    input[type="text"]:focus, input[type="password"]:focus {
-      outline: 3px solid #764ba2;
-      outline-offset: 0;
-      background-color: #fff;
-      color: #764ba2;
-    }
-    button {
-      width: 100%;
-      background: #fff;
-      color: #764ba2;
-      font-weight: 700;
-      font-size: 1.1rem;
-      padding: 0.9rem;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255,255,255,0.6);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      user-select: none;
-    }
-    button:hover, button:focus {
-      background: #5a3e9e;
-      color: #fff;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      transform: translateY(-3px);
-      outline: none;
-    }
-    .back-link {
-      margin-top: 1.5rem;
-      display: inline-block;
-      color: #ddd;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-    }
-    .back-link:hover {
-      color: #fff;
-      text-decoration: underline;
-    }
-  </style>
-</head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles_cadastro.css) }}">
+  </head>
 <body>
-  <h1>Cadastro</h1>
-  <form action="/cadastro" method="POST" novalidate>
-    <label for="username">Usuário</label>
-    <input type="text" id="username" name="username" required autocomplete="username" />
-    <label for="password">Senha</label>
-    <input type="password" id="password" name="password" required autocomplete="new-password" />
-    <label for="confirm_password">Confirmar Senha</label>
-    <input type="password" id="confirm_password" name="confirm_password" required autocomplete="new-password" />
-    <button type="submit">Cadastrar</button>
-  </form>
-  <a class="back-link" href="/">← Voltar para a página inicial</a>
+  <div class="container">
+    <h2>Cadastro</h2>
+    <form action="#" method="post" novalidate>
+      <label for="nome">Nome Completo</label>
+      <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required />
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" name="email" placeholder="exemplo@email.com" required />
+
+      <label for="senha">Senha</label>
+      <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required minlength="6" />
+
+      <label for="confirmaSenha">Confirme a Senha</label>
+      <input type="password" id="confirmaSenha" name="confirmaSenha" placeholder="Repita sua senha" required minlength="6" />
+
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
 </body>
 </html>
