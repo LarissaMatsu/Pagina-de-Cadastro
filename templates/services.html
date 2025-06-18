@@ -3,93 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Serviços</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      color: #fff;
-      margin: 0; padding: 2rem;
-      min-height: 100vh;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    h1 {
-      font-weight: 700;
-      font-size: 3.5rem;
-      margin-bottom: 2rem;
-      text-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    }
-    .content {
-      max-width: 700px;
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 15px;
-      padding: 2rem 3rem;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-      width: 100%;
-      box-sizing: border-box;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      font-size: 1.3rem;
-      line-height: 1.7;
-    }
-    li {
-      background: rgba(255,255,255,0.2);
-      margin: 0.7rem 0;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-      text-align: left;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      transition: background 0.3s ease;
-      cursor: default;
-      user-select: none;
-    }
-    li:hover {
-      background: rgba(255,255,255,0.35);
-    }
-    .logout-button {
-      margin-top: 2rem;
-      background: #fff;
-      color: #764ba2;
-      font-weight: 700;
-      padding: 0.9rem 2.5rem;
-      border: none;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      box-shadow: 0 6px 20px rgba(255,255,255,0.6);
-      transition: background-color 0.3s ease, transform 0.3s ease;
-      user-select: none;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .logout-button:hover, .logout-button:focus {
-      background: #5a3e9e;
-      color: #fff;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      transform: translateY(-3px);
-      outline: none;
-    }
-  </style>
+  <title>Loja de Produtos de Cabelo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='service.css') }}">
 </head>
 <body>
-  <h1>Serviços Disponíveis</h1>
-  <div class="content">
-    <ul>
-      <li>Serviço 1: Consultoria personalizada</li>
-      <li>Serviço 2: Desenvolvimento web</li>
-      <li>Serviço 3: Suporte técnico 24/7</li>
-      <li>Serviço 4: Treinamento e capacitação</li>
-      <li>Serviço 5: Integração de sistemas</li>
-    </ul>
-    <a class="logout-button" href="/">Sair</a>
+  <h1>Bem-vindo à Nossa Loja de Produtos de Cabelo</h1>
+  
+  <div class="container">
+    <div class="product">
+      <img src="produto1.jpg" alt="Shampoo Hidratante" />
+      <h2>Shampoo Hidratante</h2>
+      <p>R$ 29,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto2.jpg" alt="Condicionador Nutritivo" />
+      <h2>Condicionador Nutritivo</h2>
+      <p>R$ 34,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto3.jpg" alt="Máscara Capilar" />
+      <h2>Máscara Capilar</h2>
+      <p>R$ 49,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto4.jpg" alt="Creme para Pentear" />
+      <h2>Creme para Pentear</h2>
+      <p>R$ 39,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto5.jpg" alt="Óleo de Coco" />
+      <h2>Óleo de Coco</h2>
+      <p>R$ 24,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto6.jpg" alt="Gel Definidor de Cachos" />
+      <h2>Gel Definidor de Cachos</h2>
+      <p>R$ 34,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto7.jpg" alt="Máscara de Hidratação" />
+      <h2>Máscara de Hidratação</h2>
+      <p>R$ 54,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
+
+    <div class="product">
+      <img src="produto8.jpg" alt="Spray de Brilho" />
+      <h2>Spray de Brilho</h2>
+      <p>R$ 29,90</p>
+      <a class="buy-button" href="#">Comprar</a>
+    </div>
   </div>
 </body>
 </html>

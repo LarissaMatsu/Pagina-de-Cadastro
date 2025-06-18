@@ -1,16 +1,17 @@
-```
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles_login.css) }}">
-    </head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+</head>
 <body>
     <div class="container">
         <h2 class="titulo">Login</h2>
-        <form>
+
+        <form method="POST" action="{{url_for('usuario.acesso')}}" >
+        </form>
             <div class="form-group">
                 <label for="login">Login:</label>
                 <input type="text" id="login" name="acesso" required>
@@ -24,4 +25,3 @@
     </div>
 </body>
 </html>
-```
