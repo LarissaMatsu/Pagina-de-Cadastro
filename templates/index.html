@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Loja de Produtos de Cabelo</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home - Loja de Produtos de Cabelo</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
    
 </head>
 <body>
-    <h1>Bem-vindo à Nossa Loja de Produtos de Cabelo</h1>
-    <div class="nav">
-        <a href="login.html">Login</a>
-        <a href="cadastro.html">Cadastro</a>
-    </div>
+    <header>
+        <h1>Bem-vindo à Nossa Loja de Produtos de Cabelo</h1>
+        <nav arial-label="Menu">
+            <a href="{{url_for('usuario.login')}}" class="login-button">Login</a>
+            <a href="{{url_for('usuario.cadastro')}}" class="register-button">Cadastro</a>
+        </nav>
+    </header>
+
     <div class="product">
         <h2>Produtos em Destaque</h2>
         <p>Confira nossos produtos de cabelo e cuide da sua beleza!</p>

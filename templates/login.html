@@ -7,19 +7,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h2 class="titulo">Login</h2>
+    <div class="login-container">
+        <h2>Login</h2>
 
         <form method="POST" action="{{url_for('usuario.acesso')}}" >
-        </form>
-            <div class="form-group">
-                <label for="login">Login:</label>
-                <input type="text" id="login" name="acesso" required>
-            </div>
-            <div class="form-group">
-                <label for="senha">Senha:</label>
-                <input type="password" id="senha" name="senha" required>
-            </div>
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="acesso" required />
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required />
             <button class="btn-login" type="submit">Entrar</button>
         </form>
     </div>
